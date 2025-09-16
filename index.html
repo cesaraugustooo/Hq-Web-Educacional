@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HQ - O Herói da Cidade (v2.0)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="comic-title">HQ Educacional: O Herói da Cidade</h1>
+
+    <div class="comic-viewer">
+        <div class="comic-container">
+            <div class="comic-strip">
+                <div class="comic-page">
+                    <div class="panel-row">
+                        <div class="panel border-orange">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro1.png" alt="Cidade limpa e ensolarada.">
+                        </div>
+                        <div class="panel border-orange">
+                            <img  style="width: 100%;height: 100%;" src="imagens/quadro2.png" alt="Cidade destruída e poluída.">
+                        </div>
+                    </div>
+                    <div class="panel-row">
+                        <div class="panel border-orange">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro3.png" alt="Alerta de missão no celular.">
+                        </div>
+                        <div class="panel border-orange">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro4.png" alt="Monstro de lixo Gorgan destruindo a cidade.">
+                        </div>
+                    </div>
+                     <div class="panel-row">
+                        <div class="panel border-blue">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro5.png" alt="Homem se preparando para virar herói.">
+                        </div>
+                        <div class="panel border-blue">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro6.png" alt="Herói com capuz vermelho.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comic-page">
+                    <div class="panel-row">
+                        <div class="panel border-orange">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro7.png" alt="Herói em meio à destruição.">
+                        </div>
+                        <div class="panel border-orange">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro8.png" alt="Gorgan atacando pessoas.">
+                        </div>
+                    </div>
+                    <div class="panel-row panel-row-trio">
+                        <div class="panel border-blue">
+                            <img style="width: 100%;height: 100%;" src="imagens/quadro9.png" alt="Close-up do herói.">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-controls">
+            <button id="prev-btn" class="nav-btn" title="Página Anterior (Seta Esquerda)"><i class="fas fa-arrow-left"></i></button>
+            <div id="page-indicator" class="page-indicator"></div>
+            <button id="next-btn" class="nav-btn" title="Próxima Página (Seta Direita)"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="extra-controls">
+            <button id="fullscreen-btn" class="control-btn" title="Tela Cheia"><i class="fas fa-expand"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

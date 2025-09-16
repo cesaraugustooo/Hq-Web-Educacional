@@ -1,0 +1,196 @@
+/* Definição de variáveis de cor para facilitar a customização */
+:root {
+    --bg-color: #2c3e50; /* Azul escuro */
+    --container-bg: #34495e; /* Azul um pouco mais claro */
+    --primary-text-color: #ecf0f1; /* Branco acinzentado */
+    --border-color: #7f8c8d;
+    --accent-orange: #f39c12;
+    --accent-blue: #3498db;
+    --font-title: 'Bangers', cursive;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.comic-title {
+    font-family: var(--font-title);
+    font-size: 3.5em;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 0px var(--accent-orange);
+    margin-bottom: 20px;
+}
+
+/* Container que engloba a HQ e os controles */
+.comic-viewer {
+    width: 95%;
+    max-width: 1100px;
+    position: relative;
+}
+
+.comic-container {
+    overflow: hidden;
+    border: 5px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--container-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.comic-strip {
+    display: flex;
+    width: 200%; /* 100% por página */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Animação mais suave */
+}
+
+.comic-page {
+    width: 50%; /* 100% / número de páginas */
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel-row {
+    display: flex;
+    gap: 15px;
+}
+
+.panel {
+    flex: 1;
+    position: relative;
+    border-width: 5px;
+    border-style: solid;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Animação de entrada dos painéis */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Efeito de atraso para cada painel aparecer em sequência */
+.panel:nth-child(1) { animation-delay: 0.1s; }
+.panel:nth-child(2) { animation-delay: 0.2s; }
+.panel:nth-child(3) { animation-delay: 0.3s; }
+.panel:nth-child(4) { animation-delay: 0.4s; }
+.panel:nth-child(5) { animation-delay: 0.5s; }
+.panel:nth-child(6) { animation-delay: 0.6s; }
+
+
+.panel:hover {
+    transform: scale(1.03); /* Efeito de zoom */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.border-orange {
+    border-color: var(--accent-orange);
+    background-color: var(--accent-orange);
+}
+
+.border-blue {
+    border-color: var(--accent-blue);
+    background-color: var(--accent-blue);
+}
+
+.speech-bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 3px solid #000;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    font-family: var(--font-body);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Controles de Navegação */
+.navigation-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-btn {
+    background: var(--container-bg);
+    border: 2px solid var(--border-color);
+    color: var(--primary-text-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    transform: scale(1.1);
+}
+
+.nav-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.page-indicator {
+    font-size: 1.5em;
+    font-weight: bold;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Controles Extras (Tela Cheia) */
+.extra-controls {
+    position: absolute;
+    top: -55px;
+    right: 0;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: var(--border-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.control-btn:hover {
+    color: var(--primary-text-color);
+    transform: scale(1.2);
+}
